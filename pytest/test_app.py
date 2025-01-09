@@ -1,12 +1,37 @@
 import time
-from app import add
+from app import add, multiply
 
 
+# Test for add function
 def test_add():
     start_time = time.time()
-    result = add(2, 3)
-    assert result == 5
+    for _ in range(100000):
+        assert add(2, 3) == 5
     end_time = time.time()
-    execution_time = end_time - start_time
-    with open("test_metrics.log", "a") as log_file:
-        log_file.write(f"test_add executed in {execution_time:.6f} seconds\n")
+    print(f"Execution time for test_add: {end_time - start_time} seconds")
+
+
+# Test for multiply function
+def test_multiply():
+    start_time = time.time()
+    for _ in range(100000):
+        assert multiply(2, 3) == 6
+    end_time = time.time()
+    print(f"Execution time for test_multiply: {end_time - start_time} seconds")
+
+
+# Alternative tests with different expected values
+def test_add_2():
+    start_time = time.time()
+    for _ in range(100000):
+        assert add(2, 3) == 2 + 3
+    end_time = time.time()
+    print(f"Execution time for test_add_2: {end_time - start_time} seconds")
+
+
+def test_multiply_2():
+    start_time = time.time()
+    for _ in range(100000):
+        assert multiply(2, 3) == 2 * 3
+    end_time = time.time()
+    print(f"Execution time for test_multiply_2: {end_time - start_time} seconds")
