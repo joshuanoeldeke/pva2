@@ -1,0 +1,15 @@
+test_add (__main__.TestSampleCode) ... ok
+test_multiply (__main__.TestSampleCode) ... ok
+test_add_2 (__main__.TestSampleCode2) ... ok
+test_multiply_2 (__main__.TestSampleCode2) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.222s
+
+OK
+Execution time for test_add: 0.05481243133544922 seconds
+Execution time for test_multiply: 0.05620169639587402 seconds
+Execution time for test_add_2: 0.05562710762023926 seconds
+Execution time for test_multiply_2: 0.05493903160095215 seconds
+0.26user 0.00system 0:00.27elapsed 97%CPU (0avgtext+0avgdata 12676maxresident)k
+72inputs+360outputs (0major+2260minor)pagefaults 0swaps

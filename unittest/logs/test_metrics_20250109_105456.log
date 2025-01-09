@@ -1,0 +1,11 @@
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.214s
+
+OK
+Execution time for test_add: 0.05086469650268555 seconds
+Execution time for test_multiply: 0.05456805229187012 seconds
+Execution time for test_add_2: 0.05360221862792969 seconds
+Execution time for test_multiply_2: 0.05425882339477539 seconds
+0.27user 0.00system 0:00.28elapsed 98%CPU (0avgtext+0avgdata 12860maxresident)k
+552inputs+360outputs (0major+2264minor)pagefaults 0swaps

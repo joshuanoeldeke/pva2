@@ -1,6 +1,6 @@
 import unittest
 import time
-from sample_code import add, multiply
+from app import add, multiply
 
 
 class TestSampleCode(unittest.TestCase):
