@@ -15,5 +15,8 @@ COPY . .
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Define a volume for the log file
+VOLUME ["/app/logs"]
+
 # Set the entrypoint to run the tests
 ENTRYPOINT ["./entrypoint.sh"]
