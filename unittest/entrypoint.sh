@@ -7,4 +7,4 @@ mkdir -p /app/logs
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 
 # Run pytest and log resource usage
-/usr/bin/time -v pytest -vvv --junitxml=/app/logs/results_$TIMESTAMP.xml test_app.py 2>&1 | tee /app/logs/test_metrics_$TIMESTAMP.log
+/usr/bin/time pyton test_app.py 2>&1 | tee /app/logs/test_metrics_$TIMESTAMP.log
