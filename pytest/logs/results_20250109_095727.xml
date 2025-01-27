@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<testsuites>
-    <testsuite name="pytest" errors="0" failures="0" skipped="0" tests="4" time="0.113" timestamp="2025-01-09T09:57:27.317443+00:00" hostname="2d2455391b4f">
-        <testcase classname="test_app" name="test_add" time="0.019" />
-        <testcase classname="test_app" name="test_multiply" time="0.019" />
-        <testcase classname="test_app" name="test_add_2" time="0.024" />
-        <testcase classname="test_app" name="test_multiply_2" time="0.024" />
-    </testsuite>
-</testsuites>

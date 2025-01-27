@@ -1,6 +1,6 @@
 import unittest
 import time
-from app import add, multiply
+from tests.app import add, multiply
 
 
 class TestSampleCode(unittest.TestCase):
@@ -18,20 +18,22 @@ class TestSampleCode(unittest.TestCase):
         end_time = time.time()
         print(f"Execution time for test_multiply: {end_time - start_time} seconds")
 
+
 class TestSampleCode2(unittest.TestCase):
     def test_add_2(self):
         start_time = time.time()
         for _ in range(100000):
-            self.assertEqual(add(2, 3), 2+3)
+            self.assertEqual(add(2, 3), 2 + 3)
         end_time = time.time()
         print(f"Execution time for test_add_2: {end_time - start_time} seconds")
 
     def test_multiply_2(self):
         start_time = time.time()
         for _ in range(100000):
-            self.assertEqual(multiply(2, 3), 2*3)
+            self.assertEqual(multiply(2, 3), 2 * 3)
         end_time = time.time()
         print(f"Execution time for test_multiply_2: {end_time - start_time} seconds")
+
 
 if __name__ == "__main__":
     unittest.main()

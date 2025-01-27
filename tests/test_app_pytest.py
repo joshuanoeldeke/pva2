@@ -1,5 +1,5 @@
 import time
-from app import add, multiply
+from tests.app import add, multiply
 
 
 # Test for add function

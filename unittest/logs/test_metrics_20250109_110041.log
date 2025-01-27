@@ -1,7 +1,0 @@
-usage: test_app.py [-h] [-v] [-q] [--locals] [-f] [-c] [-b]
-                   [-k TESTNAMEPATTERNS]
-                   [tests ...]
-test_app.py: error: unrecognized arguments: --durations
-Command exited with non-zero status 2
-0.02user 0.01system 0:00.05elapsed 85%CPU (0avgtext+0avgdata 12712maxresident)k
-72inputs+360outputs (0major+2253minor)pagefaults 0swaps

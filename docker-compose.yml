@@ -1,0 +1,9 @@
+services:
+  testing:
+    build: .
+    container_name: python_testing
+    volumes:
+      - ./results:/app/results  # Map results folder for logs/metrics
+    environment:
+      - PYTHONPATH=/app
+    command: ./scripts/run_benchmark.sh
