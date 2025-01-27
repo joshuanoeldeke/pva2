@@ -1,28 +1,37 @@
-import json
 import os
+import matplotlib.pyplot as plt
 
 
-def process_pytest_metrics(file_path):
-    with open(file_path, "r") as f:
-        data = json.load(f)
-    print(f"Processed Pytest Metrics: {data}")
+def extract_metrics(results_dir):
+    metrics = {}
+    for framework in ["pytest", "unittest"]:
+        log_file = os.path.join(results_dir, framework, f"{framework}_time.log")
+        if os.path.exists(log_file):
+            with open(log_file, "r") as f:
+                for line in f:
+                    if "User time (seconds):" in line:
+                        metrics[framework] = float(line.split(":")[-1].strip())
+        else:
+            print(f"Time log for {framework} not found.")
+    return metrics
 
 
-def process_unittest_logs(file_path):
-    with open(file_path, "r") as f:
-        logs = f.read()
-    print(f"Processed Unittest Logs: {logs}")
+def visualize_metrics(metrics):
+    frameworks = list(metrics.keys())
+    times = list(metrics.values())
+
+    plt.bar(frameworks, times, color=["blue", "green"])
+    plt.xlabel("Framework")
+    plt.ylabel("Execution Time (s)")
+    plt.title("Test Execution Time by Framework")
+    plt.savefig("execution_times.png")
+    plt.show()
 
 
 if __name__ == "__main__":
-    base_dir = "results"
-
-    # Process Pytest Metrics
-    pytest_metrics_path = os.path.join(base_dir, "metrics", "pytest_metrics.json")
-    if os.path.exists(pytest_metrics_path):
-        process_pytest_metrics(pytest_metrics_path)
-
-    # Process Unittest Logs
-    unittest_logs_path = os.path.join(base_dir, "logs", "unittest.log")
-    if os.path.exists(unittest_logs_path):
-        process_unittest_logs(unittest_logs_path)
+    results_directory = "/app/results"
+    metrics = extract_metrics(results_directory)
+    if metrics:
+        visualize_metrics(metrics)
+    else:
+        print("No metrics found to visualize.")

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Report - {{ timestamp }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        .metrics { margin: 20px 0; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+        img { max-width: 800px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Test Performance Report - {{ timestamp }}</h1>
+    
+    <h2>Visualizations</h2>
+    {% for img in images %}
+    <img src="{{ img }}" alt="{{ img }}">
+    {% endfor %}
+    
+    <h2>Detailed Metrics</h2>
+    <div class="metrics">
+        {% for framework in ['pytest', 'unittest'] %}
+        <h3>{{ framework|title }} Metrics</h3>
+        <table>
+            <tr><th>Metric</th><th>Value</th></tr>
+            {% for key, value in data[framework].metrics.items() %}
+            <tr><td>{{ key }}</td><td>{{ value }}</td></tr>
+            {% endfor %}
+        </table>
+        {% endfor %}
+    </div>
+</body>
+</html>

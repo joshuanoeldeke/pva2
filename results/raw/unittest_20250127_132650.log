@@ -1,0 +1,13 @@
+test_add (test_app_unittest.TestSampleCode.test_add) ... ok
+test_multiply (test_app_unittest.TestSampleCode.test_multiply) ... ok
+test_add_2 (test_app_unittest.TestSampleCode2.test_add_2) ... ok
+test_multiply_2 (test_app_unittest.TestSampleCode2.test_multiply_2) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.186s
+
+OK
+Execution time for test_add: 0.044217586517333984 seconds
+Execution time for test_multiply: 0.04712700843811035 seconds
+Execution time for test_add_2: 0.04626035690307617 seconds
+Execution time for test_multiply_2: 0.047173500061035156 seconds
